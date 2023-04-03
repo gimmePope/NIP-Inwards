@@ -1,0 +1,48 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.sterling.ng.com/nip/xml"
+targetNamespace="http://www.sterling.ng.com/nip/xml" elementFormDefault="qualified">
+
+
+<xs:element name="NERequest">
+ <xs:complexType>
+            <xs:sequence>
+            	<xs:element name="sessionId" type="xs:string"/>
+                <xs:element name="accountNumber" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+ </xs:element>
+ 
+   <xs:element name="NEResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="account" type="tns:Account"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:complexType name="Account">
+        <xs:sequence>
+            <xs:element name="accountName" type="xs:string"/>
+            <xs:element name="accountNumber" type="xs:string"/>
+            <xs:element name="bvn" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:element name="NESingleRequest">
+ <xs:complexType>
+            <xs:sequence>
+                <xs:element name="request" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+ </xs:element>
+ 
+  <xs:element name="NESingleResponse">
+ <xs:complexType>
+            <xs:sequence>
+                <xs:element name="response" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+ </xs:element>
+ 
+ 
+ 
+ </xs:schema>
